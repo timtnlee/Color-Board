@@ -5,7 +5,7 @@ var myClearColorGradient,
 $(function() {
     fillcolor()
     addColor()
-    colorChange($('#display'), [0, 0, 0], [255, 255, 255], myMillisecond, 5)
+    colorChange($('#display'), [0, 0, 0], [255, 255, 255], myMillisecond)
     setTime()
     $('#colorPanel').find('p').not('.add').on('click', function() {
         colorPanel($(this))
@@ -28,7 +28,6 @@ function fillcolor() {
     $.map(color, function(c) {
         $('<p>.</p>').css({ backgroundColor: c, color: c }).appendTo('#colorPanel')
     })
-    $('<p class="add">+</p>').appendTo('#colorPanel')
     $('.sec').text(myMillisecond)
 }
 
@@ -66,7 +65,6 @@ function colorChange(element, [R, G, B], [r, g, b], millisec, fps) {
     }
 
 }
-
 function colorPanel(target) {
     var rgb = target.css('background-color'),
         arry = rgb.substring(4, rgb.length - 1)
@@ -86,25 +84,26 @@ function colorPanel(target) {
 function setTime() {
     var timeCount = 0,
         interval;
-    $('.setTime').on('mousedown', function() {
+    $('.setTime')
+    .on('mousedown touchstart', function() {
         timeCount = 0
         interval = setInterval(function() {
             $('.sec').text(timeCount)
             timeCount += 10
         }, 10)
 
-        $(this).mouseup(function() {
+        
+    }).on('mouseup touchend',function() {
             clearInterval(interval)
             myMillisecond = timeCount
         })
-    })
 
 }
 
 function addColor() {
-    $('#colorPanel').find('.add').on('click', function() {
+    $('#display').on('click', function() {
         if (myNowChanging) {
-            var rgb = $('#display').css('background-color'),
+            var rgb = $(this).css('background-color'),
                 arry = rgb.substring(4, rgb.length - 1)
             rgbAry = arry.split(',')
             $('<p>.</p>').css({
@@ -112,7 +111,7 @@ function addColor() {
                 color: 'rgba(' + rgbAry[0] + ',' + rgbAry[1] + ',' + rgbAry[2] + ')'
             }).on('click', function() {
                 colorPanel($(this))
-            }).insertBefore($(this))
+            }).appendTo('#colorPanel')
         }
 
     })
