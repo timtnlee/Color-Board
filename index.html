@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Color-Gradient</title>
+</head>
+
+<body>
+    <div class="container margin">
+        <h4>Color-Gradient<img src='setting.png' class="icon"></h4>
+        <div class="settingContainer">
+            <div id='setting'>
+                <span class="closed glyphicon glyphicon-remove"></span>
+                <h3>Setting</h3>
+                <div class="row">
+                    <div class="col-sm-6" style="padding-top: 20px">
+                        <strong >Gradient Time</strong><br>
+                        <div style="padding-top: 20px">
+                        <p class="round setTime">
+                            <span class="sec"></span><br>
+                            milliseconds
+                        </p><br>
+                        Press This Button as long as <br>the time you want color to change.
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6" style="padding-top: 20px">
+                        <strong>Add Color</strong><br>
+                        <div style="padding-top: 20px">Press the<br>
+                        <p class="round add">+</p><br>
+                        button below while color changing.
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        <div id='display'></div><br>
+        <div id='colorPanel'>
+            
+        </div>
+
+    </div>
+</body>
+
+</html>

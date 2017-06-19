@@ -1,0 +1,97 @@
+body{
+	margin: 0;
+}
+.margin{
+	width: 600px;
+	text-align: center;
+	padding:0px 0px 10vh 0vh; 
+}
+.margin h4{
+	color: white;
+	background: linear-gradient(to right, red,blue,green);
+	margin-bottom: 50px;
+}
+.icon{
+	width: 50px;
+	cursor: pointer;
+}
+.settingContainer{
+	display: none;
+	opacity: 0;
+	background-color: rgba(100, 100, 100, .8);
+	top: 0;
+	left: 0px;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+}
+#setting{	
+	position: relative;
+	margin-top: 100px;
+	display: inline-block;
+	border-radius: 5px;
+	width: 600px;
+	min-height: 400px;
+	padding: 2px;
+	background-color: lightblue;
+}
+.closed{
+	cursor: pointer;
+	color: gray;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	font-size: 40px;
+}
+.closed:hover{
+	color: white;
+}
+#display{
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	border: 1px solid lightgrey;
+}
+#colorPanel{
+	display: inline-block;
+	width: 600px;
+}
+.round{
+	background-color: white;
+	color: gray;
+	padding-top: 20px;
+	font-size: 18px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+	width: 110px;
+	height: 110px;
+	border-radius: 60px;
+	border: 1px solid lightgrey;
+}
+#colorPanel p{
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+	width: 110px;
+	height: 110px;
+	border-radius: 60px;
+	border: 1px solid lightgrey;
+	font-size: 80px;
+	padding: 0px 0px 0px 0px;
+}
+.add{
+	background-color: white;
+	color: gray;
+	font-size: 80px;
+	padding: 0px 0px 0px 0px;
+}
+.add i{
+	padding: 0px;
+}
+@media(max-width: 600px){
+	.margin,#colorPanel,#setting{
+		width: 100%;
+	}
+}
