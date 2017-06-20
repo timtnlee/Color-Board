@@ -23,10 +23,12 @@ $(function() {
 
 function fillcolor() {
     var color = [
-        'white', 'black', 'blue', 'lightskyblue', 'red', 'yellow', 'pink', 'green', 'lightgreen', 'brown'
+        'white', 'black', 
+        'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)',
+        'rgb(255,255,0)', 'rgb(255,0,255)', 'rgb(0,255,255)'
     ]
     $.map(color, function(c) {
-        $('<p>.</p>').css({ backgroundColor: c, color: c }).appendTo('#colorPanel')
+        $('<p></p>').css({ backgroundColor: c, color: c }).appendTo('#colorPanel')
     })
     $('.sec').text(myMillisecond)
 }
@@ -106,7 +108,7 @@ function addColor() {
             var rgb = $(this).css('background-color'),
                 arry = rgb.substring(4, rgb.length - 1)
             rgbAry = arry.split(',')
-            $('<p>.</p>').css({
+            $('<p></p>').css({
                 backgroundColor: 'rgba(' + rgbAry[0] + ',' + rgbAry[1] + ',' + rgbAry[2] + ')',
                 color: 'rgba(' + rgbAry[0] + ',' + rgbAry[1] + ',' + rgbAry[2] + ')'
             }).on('click', function() {
