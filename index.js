@@ -70,8 +70,8 @@ function colorChange(element, [R, G, B], [r, g, b], millisec, fps) {
 function colorPanel(target) {
     var rgb = target.css('background-color'),
         arry = rgb.substring(4, rgb.length - 1)
-    rgbAry = arry.split(',')
-    RGB = $('#display').css('background-color'),
+        rgbAry = arry.split(',')
+        RGB = $('#display').css('background-color'),
         Arry = RGB.substring(4, RGB.length - 1)
     RGBAry = Arry.split(',')
     $.map(rgbAry, function(ele, i) {
@@ -80,6 +80,7 @@ function colorPanel(target) {
     $.map(RGBAry, function(ele, i) {
         RGBAry[i] = parseInt(ele)
     })
+    console.log(RGBAry)
     colorChange($('#display'), RGBAry, rgbAry, myMillisecond, 5)
 }
 
@@ -107,6 +108,8 @@ function addColor() {
         if (myNowChanging) {
             var rgb = $(this).css('background-color'),
                 arry = rgb.substring(4, rgb.length - 1)
+
+            console.log(arry)
             rgbAry = arry.split(',')
             $('<p></p>').css({
                 backgroundColor: 'rgba(' + rgbAry[0] + ',' + rgbAry[1] + ',' + rgbAry[2] + ')',
