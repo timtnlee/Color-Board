@@ -96,7 +96,7 @@ function setTime() {
         }, 10)
 
         
-    }).on('mouseup touchend',function() {
+    }).on('mouseup touchend mouseleave',function() {
             clearInterval(interval)
             myMillisecond = timeCount
         })
